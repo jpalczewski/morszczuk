@@ -2,13 +2,17 @@ from django.db import models
 
 
 class Category(models.Model):
-    name = models.CharField(verbose_name="Category name", unique=True)
+    name = models.CharField(verbose_name="Category name", unique=True, max_length=50)
+
+    class Meta:
+        verbose_name = 'Category'
+        verbose_name_plural = 'Categories'
 
 
 class Collection(models.Model):
     collection_name = models.CharField(verbose_name='Collection name', max_length=200)
     description = models.TextField(verbose_name='Description', blank=True, null=True)
-    parent_collection = models.ForeignKey('Collection', on_delete=models.PROTECT)
+    parent_collection = models.ForeignKey('Collection', on_delete=models.PROTECT, null=True, blank=True)
 
 
 class Item(models.Model):
