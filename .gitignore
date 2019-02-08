@@ -1,2 +1,5 @@
 .idea
 venv
+items/migrations
+db.sqlite3
+
