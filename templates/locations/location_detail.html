@@ -1,0 +1,36 @@
+{% extends "core/base.html" %}
+
+
+{% block content %}
+    <h2>location  {{ location.name }}</h2>
+
+    <h3>Items</h3>
+    <ul>
+    {% for item in items %}
+        <li>{{ item.item_name }}</li>
+    {% empty %}
+        No items available.
+    {% endfor %}
+    </ul>
+
+
+    <h3>Parent location</h3>
+    {% if location.parent %}
+        <a href="{% url 'locations:location-detail' location.parent.pk %}">{{ location.parent.name }}</a>
+    {% else %}
+    None
+    {% endif %}
+
+    <h3>Child locations</h3>
+    <ul>
+    {% for c in child_locations %}
+        <li><a href="{% url 'locations:location-detail' c.pk %}">{{ c.name }}</a></li>
+
+    {% empty %}
+        No child locations available.
+
+    {% endfor %}
+    </ul>
+
+    <br /><br /><br /><a href="{% url 'locations:location-list' %}">Back to location list</a>
+{% endblock %}

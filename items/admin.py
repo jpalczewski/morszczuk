@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import Category, Item, Collection
+from .models import Item
+from locations.models import Location
+from categories.models import Category
 
 
 class ItemInline(admin.TabularInline):
@@ -8,7 +10,7 @@ class ItemInline(admin.TabularInline):
 
 
 class CollectionInline(admin.StackedInline):
-    model = Collection
+    model = Location
     extra = 1
 
 
@@ -18,6 +20,6 @@ class CollectionAdmin(admin.ModelAdmin):
 
 admin.site.register(Category)
 admin.site.register(Item)
-admin.site.register(Collection, CollectionAdmin)
+admin.site.register(Location, CollectionAdmin)
 
 
