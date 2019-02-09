@@ -1,5 +1,8 @@
 .idea
 venv
-items/migrations
+items/migrations/
 db.sqlite3
 
+
+__pycache__/
+*.py[cod]
