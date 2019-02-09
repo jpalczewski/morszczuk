@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Location(models.Model):
@@ -10,3 +11,6 @@ class Location(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse("locations:location-detail", kwargs={"pk": self.pk})

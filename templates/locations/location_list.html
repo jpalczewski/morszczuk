@@ -7,4 +7,5 @@
             <li><a href="{% url 'locations:location-detail' l.pk %}">{{ l.name }}</a></li>
         {% endfor %}
     </ul>
+    <a href="{% url 'locations:location-create' %}">Create new location</a>
 {% endblock %}

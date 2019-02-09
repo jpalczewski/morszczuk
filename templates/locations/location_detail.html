@@ -32,5 +32,7 @@
     {% endfor %}
     </ul>
 
-    <br /><br /><br /><a href="{% url 'locations:location-list' %}">Back to location list</a>
+    <br /><br /><br /><a href="{% url 'locations:location-list' %}">Back to location list</a><br/>
+    <a href="{% url 'locations:location-delete' location.pk %}">Delete location</a><br />
+    <a href="{% url 'locations:location-update' location.pk %}">Update location</a>
 {% endblock %}
