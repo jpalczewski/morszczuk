@@ -1,0 +1,36 @@
+{% extends "items/base.html" %}
+
+
+{% block content %}
+    <h2>Collection  {{ collection.collection_name }}</h2>
+
+    <h3>Items</h3>
+    <ul>
+    {% for item in items %}
+        <li>{{ item.item_name }}</li>
+    {% empty %}
+        No items available.
+    {% endfor %}
+    </ul>
+
+
+    <h3>Parent collection</h3>
+    {% if collection.parent_collection %}
+        <a href="{% url 'collection-detail' collection.parent_collection.pk %}">{{ collection.parent_collection.collection_name }}</a>
+    {% else %}
+    None
+    {% endif %}
+
+    <h3>Child collections</h3>
+    <ul>
+    {% for c in child_collections %}
+        <li><a href="{% url 'collection-detail' c.pk %}">{{ c.collection_name }}</a></li>
+
+    {% empty %}
+        No child collections available.
+
+    {% endfor %}
+    </ul>
+
+    <br /><br /><br /><a href="{% url 'collection-list' %}">Back to collection list</a>
+{% endblock %}

@@ -15,5 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from items.views import CollectionList, CollectionDetail
 
-urlpatterns = [path("admin/", admin.site.urls)]
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path('collections/', CollectionList.as_view(), name='collection-list'),
+    path('collections/<int:pk>/', CollectionDetail.as_view(), name='collection-detail')
+]
