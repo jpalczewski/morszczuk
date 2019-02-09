@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "morszczuk"
+version = "0.1.0"
+description = ""
+authors = ["Jacek Palczewski <jpalczewski@gmail.com>"]
+
+[tool.black]
+include = '''
+
+(
+	\(
+		categories | items | morszczuk | locations | core
+	)/
+
+)
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
