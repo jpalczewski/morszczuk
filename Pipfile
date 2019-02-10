@@ -11,6 +11,7 @@ django-debug-toolbar = "*"
 black = "*"
 django-webpack-loader = "*"
 pywatchman = "*"
+django-crispy-forms = "*"
 
 [requires]
 python_version = "3.7"

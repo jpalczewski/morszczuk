@@ -25,7 +25,22 @@
             <li class="nav-item {% if request.resolver_match.view_name == "locations:location-list" %}active{% endif %}">
                 <a class="nav-link" href="{% url 'locations:location-list' %}">Collections</a>
             </li>
-        </ul>
+         </ul>
+
+             <ul class="nav navbar-nav navbar-right">
+                 {% if not request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                 {% else %}
+                            <li class="nav-item">
+                                         <a class="nav-link">Hello, {{ request.user }}</a>
+                            </li>
+                            <li>
+                                         <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                            </li>
+                 {% endif %}
+             </ul>
     </div>
 </nav>
 <main role="main" class="container row pl-0">
