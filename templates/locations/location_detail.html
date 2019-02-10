@@ -32,7 +32,12 @@
     {% endfor %}
     </ul>
 
-    <br /><br /><br /><a href="{% url 'locations:location-list' %}">Back to location list</a><br/>
-    <a href="{% url 'locations:location-delete' location.pk %}">Delete location</a><br />
-    <a href="{% url 'locations:location-update' location.pk %}">Update location</a>
+{% endblock %}
+
+{% block actions %}
+    <div class ="m-1">
+    <a href="{% url 'locations:location-update' location.pk %}" class="btn btn-primary btn-block">Update location</a>
+    <a href="{% url 'locations:location-delete' location.pk %}" class="btn btn-danger  btn-block">Delete location</a>
+    <a href="{% url 'locations:location-list' %}" class="btn btn-secondary btn-block">Back to location list</a><br/>
+    </div>
 {% endblock %}

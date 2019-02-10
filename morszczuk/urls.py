@@ -19,7 +19,7 @@ import core.views
 import debug_toolbar
 
 urlpatterns = [
-    path("", core.views.index),
+    path("", core.views.index, name='index'),
     path("admin/", admin.site.urls),
     path("locations/", include("locations.urls", namespace="locations")),
     path("__debug__/", include(debug_toolbar.urls)),
