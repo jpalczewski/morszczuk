@@ -9,6 +9,11 @@ verify_ssl = true
 django = "*"
 django-debug-toolbar = "*"
 black = "*"
+django-webpack-loader = "*"
+pywatchman = "*"
 
 [requires]
 python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true

@@ -23,6 +23,7 @@ class LocationDelete(DeleteView):
 
 class LocationList(ListView):
     model = Location
+    extra_context = {"show_actions": True}
 
 
 class LocationDetail(DetailView):
@@ -33,4 +34,5 @@ class LocationDetail(DetailView):
         context = super().get_context_data(**kwargs)
         context["items"] = Item.objects.filter(location=self.get_object())
         context["child_locations"] = Location.objects.filter(parent=self.get_object())
+        context["show_actions"] = True
         return context
