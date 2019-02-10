@@ -1,13 +1,18 @@
 {% load static %}
+{% load render_bundle from webpack_loader %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>morszczuk</title>
+    {% render_bundle 'main' 'css' %}
 </head>
 <body>
     <h1>morszczuk</h1>
     {% block content %}
     {% endblock %}
+
+    {% render_bundle 'main' 'js' %}
 </body>
 </html>

@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-loader": "^8.0.5",
+    "bootstrap": "^4.2.1",
+    "css-loader": "^2.1.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.7",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.3",
+    "webpack-bundle-tracker": "^0.4.2-beta"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.2.3"
+  },
+  "resolutions": {
+    "ajv": "6.8.1"
+  }
+}

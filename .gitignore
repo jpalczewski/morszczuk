@@ -5,4 +5,7 @@ db.sqlite3
 
 
 __pycache__/
-*.py[cod]
+/assets/webpack_bundles/
+/webpack-stats.json
+/yarn-error.log
+/node_modules/
