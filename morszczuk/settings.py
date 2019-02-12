@@ -31,18 +31,18 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "categories",
+    "items",
+    "locations",
+    # "debug_toolbar",
+    'webpack_loader',
+    'crispy_forms',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "items",
-    "categories",
-    "locations",
-   # "debug_toolbar",
-    'webpack_loader',
-    'crispy_forms',
 ]
 
 MIDDLEWARE = [
