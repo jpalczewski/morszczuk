@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     # "debug_toolbar",
     'webpack_loader',
     'crispy_forms',
+    'django_extensions',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -103,6 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
 INTERNAL_IPS = ["127.0.0.1"]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+LOGIN_URL = '/login'
 LOGIN_REDIRECT_URL = 'index'
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/

@@ -1,0 +1,14 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<h2>Items</h2>
+    <ul>
+        {% for c in items %}
+            <li><a href="{% url 'items:detail' c.pk %}">{{ c.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block actions %}
+{#    <a href="{% url 'locations:location-create' %}" class="btn btn-primary btn-block">Create new location</a>#}
+{% endblock %}

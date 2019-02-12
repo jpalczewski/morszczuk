@@ -26,5 +26,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("locations/", include("locations.urls", namespace="locations")),
     path("categories/", include("categories.urls", namespace="categories")),
+    path("items/", include("items.urls", namespace="items")),
     path("__debug__/", include(debug_toolbar.urls)),
 ]
