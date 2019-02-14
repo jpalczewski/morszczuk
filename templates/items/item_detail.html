@@ -1,10 +1,24 @@
 {% extends "core/base.html" %}
 
 {% block content %}
-<h2>Item {{ item.name }}</h2>
+    <h2>Item {{ item.name }}</h2>
+    {% if item.description %}
+    <p><b>Description.</b>  {{ item.description }} <br/></p>
+    {% endif %}
+
+    <p><b>Count:</b> {{ item.count }}</p>
+
+    {% if item.category %}
+    <p><b>Category:</b> <a href="{% url 'categories:detail' item.category.pk %}">{{ item.category.name }}</a></p>
+    {% endif %}
+    <p><b>Location:</b><a href="{% url 'locations:location-detail' item.location.pk %}">{{ item.location.name }}</a></p>
 
 {% endblock %}
 
 {% block actions %}
-{#    <a href="{% url 'locations:location-create' %}" class="btn btn-primary btn-block">Create new location</a>#}
+    <div class ="m-1">
+    <a href="{% url 'items:update' item.pk %}" class="btn btn-primary btn-block">Update item</a>
+    <a href="{% url 'items:delete' item.pk %}" class="btn btn-danger  btn-block">Delete item</a>
+    <a href="{% url 'items:list' %}" class="btn btn-secondary btn-block">Back to item list</a><br/>
+    </div>
 {% endblock %}

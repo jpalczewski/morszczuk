@@ -10,51 +10,21 @@
     {% render_bundle 'main' 'css' %}
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">morszczuk</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item {% if request.resolver_match.view_name == "index" %}active{% endif %}">
-                <a class="nav-link" href="{% url 'index' %}">Home</a>
-            </li>
-            <li class="nav-item {% if request.resolver_match.view_name == "locations:location-list" %}active{% endif %}">
-                <a class="nav-link" href="{% url 'locations:location-list' %}">Collections</a>
-            </li>
-         </ul>
+{% include "core/snippets/_menu.html" %}
 
-             <ul class="nav navbar-nav navbar-right">
-                 {% if not request.user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login' %}">Login</a>
-                    </li>
-                 {% else %}
-                            <li class="nav-item">
-                                         <a class="nav-link">Hello, {{ request.user }}</a>
-                            </li>
-                            <li>
-                                         <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-                            </li>
-                 {% endif %}
-             </ul>
-    </div>
-</nav>
 <main role="main" class="container row pl-0">
-<div class="col-lg-6 m-2 ml-2">
+<div class="col-lg-8 m-2 ml-2">
 {% block content %}
 {% endblock %}
 </div>
-<div class="container-fluid col-lg-3 m-2 float-lg-right border rounded bg-light {% if not show_actions %}d-none{% endif %}">
+<div class="col-lg-3 m-2  border rounded bg-light {% if not show_actions %}d-none{% endif %}">
     <h2>Actions</h2>
     {% block actions %}
     {% endblock %}
 </div>
 
-<div class="col-lg-3"></div>
+
 </main>
 {% render_bundle 'main' 'js' %}
 </body>

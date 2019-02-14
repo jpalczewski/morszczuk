@@ -1,0 +1,33 @@
+<table class="table table-lg thead-dark table-hover">
+    <thead>
+    <th scope="col">pk</th>
+    <th scope="col">name</th>
+    <th scope="col">location</th>
+    </thead>
+    <tbody>
+    {% if simple_array %}
+        {% for item in source %}
+
+        <tr>
+            <th scope="row">{{ item.pk }}</th>
+            <td><a class="btn btn-outline-dark" href="{% url 'items:detail' item.pk %}">{{ item.name }}</a></td>
+            <td><a class="btn btn-outline-dark"
+                   href="{% url 'locations:location-detail' item.location.pk %}">{{ item.location.name }}</a></td>
+        </tr>
+
+    {% endfor %}
+    {% else %}
+    {% for item in source.items.all %}
+
+        <tr>
+            <th scope="row">{{ item.pk }}</th>
+            <td><a class="btn btn-outline-dark" href="{% url 'items:detail' item.pk %}">{{ item.name }}</a></td>
+            <td><a class="btn btn-outline-dark"
+                   href="{% url 'locations:location-detail' item.location.pk %}">{{ item.location.name }}</a></td>
+        </tr>
+
+    {% endfor %}
+
+    {% endif %}
+    </tbody>
+</table>

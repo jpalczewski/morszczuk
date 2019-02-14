@@ -5,12 +5,7 @@
     <h2>location  {{ location.name }}</h2>
 
     <h3>Items</h3>
-    <ul>
-    {% for item in items %}
-        <li>{{ item.item_name }}</li>
-    {% empty %}
-        No items available.
-    {% endfor %}
+       {% include "core/snippets/_item_list_simple.html" with source=location %}
     </ul>
 
 

@@ -1,10 +1,23 @@
 {% extends "core/base.html" %}
 
 {% block content %}
-<h2>Category {{ category.name }}</h2>
+    <h2>Category {{ category.name }}</h2>
+
+    <h3>Items in that category</h3>
+
+
+    {# TODO: empty status? #}
+
+    {% include "core/snippets/_item_list_simple.html" with source=category simple_array=False %}
+
+
 
 {% endblock %}
 
 {% block actions %}
-{#    <a href="{% url 'locations:location-create' %}" class="btn btn-primary btn-block">Create new location</a>#}
+    <div class ="m-1">
+    <a href="{% url 'categories:update' category.pk %}" class="btn btn-primary btn-block">Update category</a>
+    <a href="{% url 'categories:delete' category.pk %}" class="btn btn-danger  btn-block">Delete category</a>
+    <a href="{% url 'categories:list' %}" class="btn btn-secondary btn-block">Back to category list</a><br/>
+    </div>
 {% endblock %}

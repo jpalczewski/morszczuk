@@ -6,5 +6,5 @@ urlpatterns = [
     path("add", ItemCreate.as_view(), name="create"),
     path("<int:pk>/", ItemDetail.as_view(), name="detail"),
     path("<int:pk>/update", ItemUpdate.as_view(), name="update"),
-    path("<int:pk>/delete", ItemDetail.as_view(), name="delete"),
+    path("<int:pk>/delete", ItemDelete.as_view(), name="delete"),
 ]

@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">morszczuk</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            {% include "core/snippets/_menu_item.html" with menu_item="index" menu_item_name="Home" collection=False %}
+            {% include "core/snippets/_menu_item.html" with menu_item="items:list" menu_item_name="Items" collection=True ns="items" %}
+            {% include "core/snippets/_menu_item.html" with menu_item="categories:list" menu_item_name="Categories" collection=True ns="categories" %}
+            {% include "core/snippets/_menu_item.html" with menu_item="locations:location-list" menu_item_name="Locations" collection=True ns="locations" %}
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            {% if not request.user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link">Hello, {{ request.user }}</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
