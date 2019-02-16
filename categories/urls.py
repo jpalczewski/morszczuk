@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from views import CategoryList, CategoryDetail, CategoryCreate, CategoryDelete, CategoryUpdate
+from categories.views import CategoryList, CategoryDetail, CategoryCreate, CategoryDelete, CategoryUpdate
 
 app_name = 'categories'
 urlpatterns = [
